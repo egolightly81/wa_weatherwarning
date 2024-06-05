@@ -1,43 +1,19 @@
-/* Resetting default margin and padding */
-body, h1, h2, h3, p, ul {
-    margin: 0;
-    padding: 0;
-}
-
-/* Flexbox layout for header, nav, main, and footer */
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure footer sticks to bottom */
-}
-
-header, nav, footer {
+    font-family: Arial, sans-serif;
+  }
+  
+  header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
     padding: 10px;
-    background-color: #333; /* Example background color */
-    color: white;
-}
-
-main {
-    flex: 1; /* Fill remaining space */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-}
-
-#content {
-    width: 90%; /* Adjust as needed */
-    max-width: 800px; /* Maximum width of content */
+  }
+  
+  main {
     padding: 20px;
-    margin: 10px;
-    background-color: #f4f4f4; /* Example background color */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-footer a {
-    color: white;
-}
-
-footer img {
-    vertical-align: middle;
-}
+  }
+  
+  #weather-warnings {
+    margin-top: 20px;
+  }
+  

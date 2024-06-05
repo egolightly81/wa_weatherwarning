@@ -1,29 +1,31 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const rssUrl = 'http://rss.weather.com.au/wa/perth'; // Hardcoded RSS feed URL
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-    fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (!data || !data.items) {
-                throw new Error('RSS feed data is empty or invalid.');
-            }
-
-            const items = data.items;
-            let feedContent = '';
-
-            items.forEach(item => {
-                const title = item.title || 'No Title';
-                const description = item.description || 'No Description';
-                feedContent += `<div><h3>${title}</h3><p>${description}</p></div>`;
-            });
-
-            document.getElementById('content').innerHTML = feedContent;
-        })
-        .catch(error => console.error('Error fetching RSS feed:', error.message));
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const weatherWarningsContainer = document.getElementById('weather-warnings');
+  
+    // Function to fetch and display weather warnings
+    async function fetchWeatherWarnings() {
+      try {
+        const response = await fetch('http://www.bom.gov.au/fwo/IDZ00060.warnings_wa.xml');
+        const xmlData = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
+  
+        const warnings = xmlDoc.querySelectorAll('item');
+        let warningsHTML = '<h2>Current Weather Warnings:</h2>';
+  
+        warnings.forEach(warning => {
+          const title = warning.querySelector('title').textContent;
+          const description = warning.querySelector('description').textContent;
+          warningsHTML += `<div><strong>${title}</strong>: ${description}</div>`;
+        });
+  
+        weatherWarningsContainer.innerHTML = warningsHTML;
+      } catch (error) {
+        console.error('Error fetching weather warnings:', error);
+        weatherWarningsContainer.innerHTML = 'Failed to fetch weather warnings. Please try again later.';
+      }
+    }
+  
+    // Fetch weather warnings on page load
+    fetchWeatherWarnings();
+  });
+  
