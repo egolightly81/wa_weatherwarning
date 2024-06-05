@@ -1,6 +1,8 @@
-fetch('https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=13896&obs=1&fc=1&warn=1')
-  .then(response => response.text())
-  .then(data => {
+async function fetchRSSFeed() {
+  try {
+    const response = await fetch('https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=13896&obs=1&fc=1&warn=1');
+    const data = await response.text();
+
     // Parse the RSS feed data
     const parser = new DOMParser();
     const xml = parser.parseFromString(data, 'application/xml');
@@ -20,7 +22,10 @@ fetch('https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=13896&obs=1&fc=1
       `;
       feedContainer.appendChild(article);
     });
-  })
-  .catch(error => {
+  } catch (error) {
     console.error('Error fetching RSS feed:', error);
-  });
+  }
+}
+
+// Call the fetchRSSFeed function when the page loads
+window.addEventListener('load', fetchRSSFeed);
