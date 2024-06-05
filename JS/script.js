@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch and display weather warnings
     async function fetchWeatherWarnings() {
       try {
-        const response = await fetch('http://www.bom.gov.au/fwo/IDZ00060.warnings_wa.xml');
+        const response = await fetch('https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=13896&obs=1&fc=1&warn=1');
         const xmlData = await response.text();
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
