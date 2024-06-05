@@ -1,0 +1,39 @@
+/* Resetting default margin and padding */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Flexbox layout for header, nav, main, and footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure footer sticks to bottom */
+}
+
+header, nav, footer {
+    padding: 10px;
+    background-color: #333; /* Example background color */
+    color: white;
+}
+
+main {
+    flex: 1; /* Fill remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    background-color: #f4f4f4; /* Example background color */
+    border-radius: 5px;
+}
+
+#weather {
+    /* Add weather section styles */
+}
+
+#feed {
+    /* Add RSS feed section styles */
+}
