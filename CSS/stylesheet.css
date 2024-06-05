@@ -30,10 +30,16 @@ section {
     border-radius: 5px;
 }
 
+/* Styles specific to the weather section */
 #weather {
     /* Add weather section styles */
+    /* Example: */
+    border: 1px solid #ccc;
 }
 
+/* Styles specific to the feed section */
 #feed {
     /* Add RSS feed section styles */
+    /* Example: */
+    border: 1px solid #ccc;
 }
