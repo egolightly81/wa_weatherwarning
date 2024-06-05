@@ -1,4 +1,4 @@
-fetch('https://cors-anywhere.herokuapp.com/http://rss.weather.com.au/wa/perth')
+fetch('https://cors-anywhere.herokuapp.com/http://www.bom.gov.au/fwo/IDZ00060.warnings_wa.xml')
     .then(response => response.text())
     .then(data => {
         // Parse XML data
