@@ -24,53 +24,20 @@ main {
     align-items: center; /* Center content vertically */
 }
 
-.content {
+#content {
     width: 90%; /* Adjust as needed */
     max-width: 800px; /* Maximum width of content */
-}
-
-section {
     padding: 20px;
     margin: 10px;
     background-color: #f4f4f4; /* Example background color */
     border-radius: 5px;
-}
-
-/* Styles specific to the weather section */
-#weather {
-    /* Add weather section styles */
-    /* Example: */
     border: 1px solid #ccc;
 }
 
-/* Styles specific to the feed section */
-#feed {
-    /* Add RSS feed section styles */
-    /* Example: */
-    border: 1px solid #ccc;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-}
-
-nav li {
-    margin-right: 20px;
-}
-
-nav a {
+footer a {
     color: white;
-    text-decoration: none;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .content {
-        width: 90%; /* Adjust as needed */
-    }
+footer img {
+    vertical-align: middle;
 }
