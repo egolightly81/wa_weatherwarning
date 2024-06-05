@@ -2,14 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>RSS Reader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Warning WA </title>
+    <meta name="author" content="Your Name">
+    <meta name="description" content="RSS Reader">
+    <meta name="keywords" content="RSS, Reader, JavaScript">
     <link rel="stylesheet" href="CSS/stylesheet.css">
 </head>
 <body>
-    <section id="rss-feed-container" class="rss-feed">
-        <!-- RSS feed items will be added here -->
-    </section>
+    <header>
+        <h2>RSS Reader</h2>
+        <form>
+            <input type="text" id="rss-input" value="https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=13896&obs=1&fc=1&warn=1">
+            <button type="button" id="add-feed">Get Articles</button>
+        </form>
+    </header>
+    <main></main>
+    <footer>
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
+            <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+        </a><br>
+        This work is licensed under a <br>
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>
+    </footer>
     <script src="JS/script.js"></script>
 </body>
 </html>

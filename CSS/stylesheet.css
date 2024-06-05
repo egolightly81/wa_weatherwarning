@@ -1,50 +1,60 @@
+/*
+Description: Minimal styling for in-class exercise
+Author: Your Name
+Email: your.email@example.com
+Tags: RSS Reader
+*/
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
-header, footer {
-  background-color: #333;
-  color: #fff;
+/* Style the top navigation bar */
+header {
+  width: 100%;
+  overflow: hidden;
+  background-color: #131212;
+  color: rgb(252, 249, 249);
   text-align: center;
   padding: 10px;
 }
 
+/* Style the content */
 main {
+  margin: 0 auto;
+  width: 80%;
   padding: 20px;
 }
 
-#weather-warnings {
-  margin-top: 20px;
+/* Style the footer */
+footer {
+  clear: both;
+  text-align: center;
+  width: 100%;
 }
 
-/* Styles for the RSS feed container */
-#rss-feed-container {
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Style the feed items */
+article {
   border: 1px solid #ccc;
   padding: 10px;
-  background-color: #f9f9f9;
+  margin-bottom: 10px;
 }
 
-/* Styles for individual RSS feed items */
-#rss-feed-container article {
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#rss-feed-container article h2 {
+h3 {
   margin-top: 0;
 }
 
-#rss-feed-container article a {
-  color: #333;
+a {
   text-decoration: none;
+  color: #333;
 }
 
-#rss-feed-container article a:hover {
+a:hover {
   text-decoration: underline;
-}
-
-#rss-feed-container article p {
-  margin-bottom: 0;
 }
