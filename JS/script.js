@@ -21,7 +21,7 @@ xhr.onload = function () {
 
 // Create and send a GET request
 function onAddRSSClicked(event) {
-    let URL = 'https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=13896&obs=1&fc=1&warn=1';
+    let URL = 'https://rss2json.com/#rss_url=http%3A%2F%2Fwww.bom.gov.au%2Ffwo%2FIDZ00074.warnings_marine_wa.xml';
     xhr.open('GET', 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(URL));
     xhr.send();
 }
