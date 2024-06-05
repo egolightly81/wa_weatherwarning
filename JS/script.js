@@ -10,14 +10,20 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
+            if (!data || !data.items) {
+                throw new Error('RSS feed data is empty or invalid.');
+            }
+
             const items = data.items;
             let feedContent = '';
 
             items.forEach(item => {
-                feedContent += `<div><h3>${item.title}</h3><p>${item.description}</p></div>`;
+                const title = item.title || 'No Title';
+                const description = item.description || 'No Description';
+                feedContent += `<div><h3>${title}</h3><p>${description}</p></div>`;
             });
 
             document.getElementById('content').innerHTML = feedContent;
         })
-        .catch(error => console.error('Error fetching RSS feed:', error));
+        .catch(error => console.error('Error fetching RSS feed:', error.message));
 });
