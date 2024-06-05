@@ -1,4 +1,4 @@
-fetch('http://www.bom.gov.au/fwo/IDZ00060.warnings_wa.xml')
+fetch('https://www.bom.gov.au/fwo/IDZ00060.warnings_wa.xml')
     .then(response => response.text())
     .then(data => {
         // Parse XML data
